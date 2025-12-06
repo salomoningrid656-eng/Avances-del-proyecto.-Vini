@@ -1,0 +1,55 @@
+package com.example.MyApplicationproyecto
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
+import com.example.myapplication.R
+
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var etNombre: EditText
+    private lateinit  var etEdad: EditText
+    private lateinit var etGenero: EditText
+    private lateinit var etCorreo: EditText
+    private lateinit var etContrasena: EditText
+    private lateinit var btnIniciarSesion: Button
+    private lateinit var tvOlvideContrasena: TextView
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        etNombre = findViewById<EditText>(R.id.et_nombre)
+        etEdad = findViewById<EditText>(R.id.et_edad)
+        etGenero = findViewById<EditText>(R.id.et_genero)
+        etCorreo = findViewById<EditText>(R.id.et_correo)
+        etContrasena = findViewById<EditText>(R.id.et_contrasena)
+
+        btnIniciarSesion = findViewById<Button>(R.id.btn_iniciar_sesion)
+        tvOlvideContrasena = findViewById<TextView>(R.id.tv_olvide_contrasena)
+
+
+
+        btnIniciarSesion.setOnClickListener {
+
+            val correo = etCorreo.text.toString()
+            val contrasena = etContrasena.text.toString()
+
+
+            if (correo.isNotEmpty() && contrasena.isNotEmpty()) {
+                Toast.makeText(this, "Intentando iniciar sesión con $correo", Toast.LENGTH_SHORT).show()
+                // Aquí iría la lógica real de inicio de sesión
+            } else {
+                Toast.makeText(this, "Ingresa tu correo y contraseña.", Toast.LENGTH_LONG).show()
+            }
+        }
+
+        tvOlvideContrasena.setOnClickListener {
+            Toast.makeText(this, "Redirigiendo a recuperación de contraseña...", Toast.LENGTH_SHORT).show()
+            // Aquí iría el intent para abrir la actividad de recuperación
+        }
+    }
+}
