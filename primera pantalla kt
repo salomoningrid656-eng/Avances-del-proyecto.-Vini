@@ -1,0 +1,32 @@
+package com.example.mymood_v2
+
+import android.content.Intent
+import android.os.Bundle
+import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
+
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        // Botón: Crear cuenta
+        val btnCrearCuenta = findViewById<Button>(R.id.btnCrearCuenta)
+
+        // Botón: Iniciar sesión
+        val btnIniciar = findViewById<Button>(R.id.btnIniciar)
+
+        // Ir al registro
+        btnCrearCuenta.setOnClickListener {
+            val intent = Intent(this, RegisterActivity ::class.java)
+            startActivity(intent)
+        }
+
+        // Ir a la misma pantalla que usas cuando en Registro presionas "Continuar"
+        btnIniciar.setOnClickListener {
+            val intent = Intent(this, NextActivity::class.java)
+            startActivity(intent)
+        }
+    }
+}
