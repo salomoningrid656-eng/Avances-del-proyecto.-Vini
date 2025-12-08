@@ -1,0 +1,35 @@
+package com.example.mymood_4
+
+import android.os.Bundle
+import android.widget.LinearLayout
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+
+class ResultadosActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_resultados)
+
+        val contenedor = findViewById<LinearLayout>(R.id.contenedorRespuestas)
+        val btnFinalizar = findViewById<android.widget.Button>(R.id.btnFinalizar)
+
+        // Lista recibida desde QuestionActivity
+        val respuestas = intent.getStringArrayListExtra("respuestas")
+
+        if (respuestas != null) {
+            for (i in respuestas.indices) {
+                val txt = TextView(this)
+                txt.text = "Pregunta ${i + 1}: ${respuestas[i]}"
+                txt.textSize = 18f
+                txt.setPadding(0, 10, 0, 10)
+                txt.setTextColor(android.graphics.Color.BLACK)
+                contenedor.addView(txt)
+            }
+        }
+
+        btnFinalizar.setOnClickListener {
+            finish()
+        }
+    }
+}
