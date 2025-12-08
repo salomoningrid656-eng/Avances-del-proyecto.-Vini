@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center"
+    android:background="#FAF7F0">
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="400dp"
+        android:layout_height="390dp"
+        android:src="@drawable/ic_heart"
+        android:layout_marginBottom="20dp"
+        android:contentDescription="Logo My Mood" />
+    <Button
+        android:id="@+id/btnIniciar"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:text="Iniciar"
+        android:textSize="18sp"
+        android:padding="12dp"
+        android:backgroundTint="#FF7A00"
+        android:textColor="#3A4551"
+        android:layout_marginBottom="16dp" />
+    <Button
+        android:id="@+id/btnCrearCuenta"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:text="Crear cuenta"
+        android:textSize="18sp"
+        android:padding="12dp"
+        android:backgroundTint="#5A2E98"
+        android:textColor="#FFFFFF" />
+
+</LinearLayout>
